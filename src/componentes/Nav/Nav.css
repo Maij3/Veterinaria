@@ -1,0 +1,20 @@
+a.navbar-brand {
+    font-size: 40px !important;
+    padding-left: 30px;
+}
+
+button#btn-nav {
+    margin-right: 10px;
+}
+
+.navbar-nav {
+  font-size: 20px;
+  padding-left: 20px;
+}
+.form-control {
+  width: 20%;
+  margin-left: 20px;
+}
+button.btn.btn-outline-success {
+  margin: 20px !important;
+}
