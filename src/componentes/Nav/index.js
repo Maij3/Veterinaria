@@ -4,23 +4,28 @@ import {
     FontAwesomeIcon
 } from "@fortawesome/react-fontawesome";
 import {
-  faPaw
+    faPaw
 } from "@fortawesome/free-solid-svg-icons";
-
+import {
+    Link
+} from "react-router-dom";
 const btnMenu = () => {
     $(document).ready(function() {
         $("#btn-nav").click(() => {
-            $(".collapse").slideToggle();
+            $(".collapse").slideToggle("slow");
             console.log("Jaime");
+        })
+        $("a.nav-link").click(()=>{
+            $(".collapse").slideToggle("slow");
         })
     })
 }
 btnMenu();
 
-function Nav() {
+function Nav({Titulo}) {
     return (
         <nav className="navbar navbar-dark bg-dark">
-          <a className="navbar-brand" href="#"><FontAwesomeIcon icon={faPaw} /> Veterinaria</a>
+          <Link className="navbar-brand" to="/"> <FontAwesomeIcon icon={faPaw} /> {Titulo}</Link>
         <button id="btn-nav" className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -28,30 +33,18 @@ function Nav() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item active">
-              <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
+              <Link className="nav-link" to="/mascotas">Mascotas <span className="sr-only">(current)</span></Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Link</a>
-            </li>
-            <li className="nav-item dropdown">
-              <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown
-              </a>
-              <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a className="dropdown-item" href="#">Action</a>
-                <a className="dropdown-item" href="#">Another action</a>
-                <div className="dropdown-divider"></div>
-                <a className="dropdown-item" href="#">Something else here</a>
-              </div>
+             <Link className="nav-link" to="/veterinaria">Veterinaria</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link disabled" href="#">Disabled</a>
+             <Link className="nav-link" to="/duenos">Dueños</Link>
+            </li>
+            <li className="nav-item">
+             <Link className="nav-link" to="/consultas">Consultas</Link>
             </li>
           </ul>
-          <form className="form-inline my-2 my-lg-0">
-            <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
-            <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
         </div>
       </nav>
     )

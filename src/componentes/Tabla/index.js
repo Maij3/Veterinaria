@@ -1,59 +1,48 @@
 import "./Tabla.css";
 import {
-    FontAwesomeIcon
+  FontAwesomeIcon
 } from "@fortawesome/react-fontawesome";
 import {
   faPlus
 } from "@fortawesome/free-solid-svg-icons";
+import Encabezado from "./encabezado.js";
+import Fila from "./fila.js";
 
-function Tabla ({
-  CambiarModal = () =>{},
+function Tabla({
+  CambiarModal = () => {},
+  columna,
+  datos
 }) {
 
-  const cambiarModal = (Estado) =>{
+  const cambiarModal = (Estado) => {
     CambiarModal(Estado);
   }
-  
-  return(
+
+  return (
     <div className="container">
-        <button 
-          type="button" 
-          className ="btn btn-primary btn-style"
-          onClick = {cambiarModal} 
-        >
+      <div className="flex-container">
+        <form className="form-inline my-2 my-lg-0">
+          <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
+          <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+        <button
+        type="button"
+        className ="btn btn-primary btn-style"
+        onClick = {cambiarModal}
+      >
           <FontAwesomeIcon icon={faPlus} />
         </button>
+      </div>
       <table className="table">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr>
-        </tbody>
+        <Encabezado columna ={columna} />
+        {
+          datos.map((data , key)  =>(
+            <Fila  
+            key ={key}
+            data = {data} />
+          ))
+        }
       </table>
-
     </div>
   )
 }

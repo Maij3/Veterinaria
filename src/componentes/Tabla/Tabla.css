@@ -2,3 +2,19 @@
   margin: 20px;
   float: right;
 }
+
+.flex-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+}
+
+.form-inline {
+  display: flex;
+  align-items: center;
+}
+
+th {
+  text-transform:capitalize;
+}
