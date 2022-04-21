@@ -11,25 +11,27 @@ import {
 } from "react-router-dom";
 const btnMenu = () => {
     $(document).ready(function() {
-        $("#btn-nav").click(() => {
+        $("#btn-nav").click((e) => {
+            e.stopPropagation();
             $(".collapse").slideToggle("slow");
-            console.log("Jaime");
         })
-        $("a.nav-link").click(()=>{
+        $("a.nav-link").click((e) => {
+            e.stopPropagation();
             $(".collapse").slideToggle("slow");
         })
     })
 }
 btnMenu();
 
-function Nav({Titulo}) {
+function Nav({
+    Titulo
+}) {
     return (
-        <nav className="navbar navbar-dark bg-dark">
+    <nav className="navbar navbar-dark bg-dark">
           <Link className="navbar-brand" to="/"> <FontAwesomeIcon icon={faPaw} /> {Titulo}</Link>
         <button id="btn-nav" className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
-
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item active">
@@ -46,7 +48,7 @@ function Nav({Titulo}) {
             </li>
           </ul>
         </div>
-      </nav>
+    </nav>
     )
 }
 

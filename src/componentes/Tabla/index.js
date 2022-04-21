@@ -10,14 +10,15 @@ import Fila from "./fila.js";
 
 function Tabla({
   CambiarModal = () => {},
-  columna,
-  datos
+  columna = [],
+  datos=[],
+  EliminarEntidades = ()=>{},
+  EditarEntidades =()=>{},
 }) {
 
   const cambiarModal = (Estado) => {
     CambiarModal(Estado);
   }
-
   return (
     <div className="container">
       <div className="flex-container">
@@ -26,23 +27,35 @@ function Tabla({
           <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
         <button
-        type="button"
-        className ="btn btn-primary btn-style"
-        onClick = {cambiarModal}
-      >
+	    type="button"
+	    className ="btn btn-primary btn-style"
+	    onClick = {cambiarModal}
+	>
           <FontAwesomeIcon icon={faPlus} />
         </button>
       </div>
+      <div className="table-responsive">
       <table className="table">
         <Encabezado columna ={columna} />
+	<tbody>
         {
-          datos.map((data , key)  =>(
-            <Fila  
-            key ={key}
-            data = {data} />
+	    datos.map((item , key)  =>(
+		item.map((item2 , key2) =>(
+		 <Fila  
+		    key ={`Fila-${key2}`}
+		    data = {item2}
+		    columna ={columna}
+		    index= {key2}
+		    EliminarEntidades ={EliminarEntidades}
+		    EditarEntidades = {EditarEntidades}
+		    />
+		))
           ))
-        }
+	}
+	 </tbody>	 
       </table>
+
+      </div>
     </div>
   )
 }

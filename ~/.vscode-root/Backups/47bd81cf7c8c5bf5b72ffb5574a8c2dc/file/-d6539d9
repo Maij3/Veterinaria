@@ -1,0 +1,21 @@
+file:///home/maije/Desktop/JS/veterinaria/frontend/src/componentes/Tabla/fila.js {"mtime":1645059714528,"ctime":1644620928029,"size":389,"etag":"38ai5k8ckch","orphaned":false,"typeId":""}
+
+function Fila({ data , columna }) {
+  console.log({columna})
+  return (
+    <tbody>
+      {
+        data.map((item, key) => (
+          <tr>
+            <th scope="row">{key}</th>
+            <td>{item.Nombre}</td>
+            <td>{item.Peso}</td>
+            <td>{item.Edad}</td>
+            <td>{item.Raza}</td>
+          </tr>
+        ))
+      }
+    </tbody>
+  )
+}
+export default Fila

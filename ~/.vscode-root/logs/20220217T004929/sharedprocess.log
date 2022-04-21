@@ -1,0 +1,4 @@
+[2022-02-17 00:49:46.182] [sharedprocess] [info] Starting worker process with pid 7937 (type: fileWatcher, window: 1).
+[2022-02-17 00:49:47.851] [sharedprocess] [warning] No ptyHost heartbeat after 6 seconds
+[2022-02-17 00:50:13.887] [sharedprocess] [info] Worker process with pid 7937 terminated normally (type: fileWatcher, window: 1).
+[2022-02-17 00:50:17.862] [sharedprocess] [info] Starting worker process with pid 8006 (type: fileWatcher, window: 1).

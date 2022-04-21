@@ -1,56 +1,33 @@
 import "./Modal.css";
-import {
-    FontAwesomeIcon
-} from "@fortawesome/react-fontawesome";
-import {
-  faTimesCircle
-} from "@fortawesome/free-solid-svg-icons";
 
 
-
-function Modal ({
-  CambiarModal = () =>{}
+import ModalHeader from "./ModalHeader";
+import ModalFooter from "./ModalFooter";
+function Modal({
+    CambiarModal = () => {},
+    CrearEntidades =() =>{},
+    Objeto,
+    Titulo,
+    children =[],
 }) {
-  const cambiarModal = () =>{
-    CambiarModal(false)
-  }
+    const cambiarModal = () => {
+        CambiarModal(false)
+    }
 
-  return (
+
+    return (
     <div className="modal" tabIndex="-1" role="dialog">
       <div className="modal-dialog" role="document">
         <div className="modal-content">
-          <div className="modal-header">
-            <h5 className="modal-title">Modal title</h5>
-            <button 
-              type="button" 
-              className="close" 
-              data-dismiss="modal" 
-              aria-label="Close"
-              onClick = {cambiarModal}
-          >
-              <FontAwesomeIcon icon={faTimesCircle} />
-            </button>
-          </div>
+	    <ModalHeader cambiarModal={cambiarModal} Titulo={Titulo} />
           <div className="modal-body">
-            <p>Modal body text goes here.</p>
+	      {children}
           </div>
-          <div className="modal-footer">
-            <button 
-              type="button" 
-              className="btn btn-primary">
-                Save changes
-            </button>
-            <button 
-              type="button" 
-              className="btn btn-secondary" 
-              data-dismiss="modal" 
-              onClick={cambiarModal}>Close
-            </button>
-          </div>
+	  <ModalFooter CrearEntidades = {CrearEntidades} Objeto= {Objeto} />
         </div>
       </div>
     </div>
-  )
+    )
 }
 
 export default Modal;

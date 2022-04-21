@@ -1,0 +1,19 @@
+[2022-02-17T04:50:24.846Z] Validating found git in: git
+[2022-02-17T04:50:24.970Z] Using git 2.17.1 from git
+[2022-02-17T04:50:26.037Z] > git rev-parse --git-dir [946ms]
+[2022-02-17T04:50:26.054Z] Open repository: /home/maije/Desktop/JS/veterinaria/frontend
+[2022-02-17T04:50:26.272Z] > git symbolic-ref --short HEAD [19ms]
+[2022-02-17T04:50:26.467Z] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track) refs/heads/master refs/remotes/master [180ms]
+[2022-02-17T04:50:26.511Z] > git remote --verbose [8ms]
+[2022-02-17T04:50:26.512Z] > git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname) [27ms]
+[2022-02-17T04:50:27.346Z] > git config --get commit.template [717ms]
+[2022-02-17T04:50:29.480Z] > git symbolic-ref --short HEAD [4ms]
+[2022-02-17T04:50:29.501Z] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track) refs/heads/master refs/remotes/master [6ms]
+[2022-02-17T04:50:29.542Z] > git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname) [24ms]
+[2022-02-17T04:50:29.544Z] > git remote --verbose [5ms]
+[2022-02-17T04:50:29.608Z] > git config --get commit.template [16ms]
+[2022-02-17T04:50:34.671Z] > git symbolic-ref --short HEAD [4ms]
+[2022-02-17T04:50:34.692Z] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track) refs/heads/master refs/remotes/master [5ms]
+[2022-02-17T04:50:34.726Z] > git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname) [19ms]
+[2022-02-17T04:50:34.727Z] > git remote --verbose [4ms]
+[2022-02-17T04:50:34.784Z] > git config --get commit.template [5ms]

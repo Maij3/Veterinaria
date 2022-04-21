@@ -1,0 +1,28 @@
+[2022-02-17 00:50:54.247] [exthost] [info] Extension host with pid 8252 started
+[2022-02-17 00:50:54.248] [exthost] [info] Skipping acquiring lock for /home/maije/Desktop/JS/veterinaria/frontend/~/.vscode-root/User/workspaceStorage/52b27ca655b3f67d359ce90506e63098.
+[2022-02-17 00:50:54.956] [exthost] [info] ExtensionService#_doActivateExtension vscode.microsoft-authentication, startup: false, activationEvent: 'onAuthenticationRequest:microsoft'
+[2022-02-17 00:50:55.059] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: true, activationEvent: '*'
+[2022-02-17 00:50:55.083] [exthost] [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.github
+[2022-02-17 00:50:55.111] [exthost] [info] ExtensionService#_doActivateExtension ecmel.vscode-html-css, startup: true, activationEvent: '*'
+[2022-02-17 00:50:55.312] [exthost] [info] ExtensionService#_doActivateExtension humy2833.ftp-simple, startup: true, activationEvent: '*'
+[2022-02-17 00:50:56.583] [exthost] [info] ExtensionService#_doActivateExtension Sophisticode.php-formatter, startup: true, activationEvent: '*'
+[2022-02-17 00:50:56.650] [exthost] [info] ExtensionService#_doActivateExtension vscodevim.vim, startup: true, activationEvent: '*'
+[2022-02-17 00:50:57.085] [exthost] [info] ExtensionService#_doActivateExtension vscode.npm, startup: true, activationEvent: 'workspaceContains:package.json'
+[2022-02-17 00:50:57.636] [exthost] [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+[2022-02-17 00:50:57.752] [exthost] [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+[2022-02-17 00:50:58.278] [exthost] [info] Eager extensions activated
+[2022-02-17 00:50:58.574] [exthost] [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+[2022-02-17 00:50:58.654] [exthost] [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onStartupFinished'
+[2022-02-17 00:50:58.672] [exthost] [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+[2022-02-17 00:50:58.679] [exthost] [info] ExtensionService#_doActivateExtension esbenp.prettier-vscode, startup: false, activationEvent: 'onStartupFinished'
+[2022-02-17 00:50:59.846] [exthost] [info] ExtensionService#_doActivateExtension ms-vscode-remote.remote-containers, startup: false, activationEvent: 'onStartupFinished'
+[2022-02-17 00:51:00.489] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 508
+[2022-02-17 00:51:03.273] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 510
+[2022-02-17 00:51:08.450] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 510
+[2022-02-17 00:51:11.044] [exthost] [info] ExtensionService#_doActivateExtension vscode.typescript-language-features, startup: false, activationEvent: 'onLanguage:javascript'
+[2022-02-17 00:51:11.188] [exthost] [info] ExtensionService#_doActivateExtension lonefy.vscode-JS-CSS-HTML-formatter, startup: false, activationEvent: 'onLanguage:javascript'
+[2022-02-17 00:51:11.307] [exthost] [info] ExtensionService#_doActivateExtension Wscats.eno, startup: false, activationEvent: 'onLanguage:javascript'
+[2022-02-17 00:51:25.149] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 510
+[2022-02-17 00:51:38.709] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 2012
+[2022-02-17 00:51:56.075] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 2055
+[2022-02-17 00:51:59.859] [exthost] [info] extension host terminating: parent process 8221 does not exist anymore: kill ESRCH (code: ESRCH) (errno: -3)

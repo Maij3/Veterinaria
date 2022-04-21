@@ -4,3 +4,7 @@
 .close {
   border: none;
 }
+
+.modal-body .container {
+    padding: 0;
+}

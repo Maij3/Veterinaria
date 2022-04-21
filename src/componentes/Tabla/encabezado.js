@@ -1,9 +1,7 @@
 
 function Encabezado ({columna}){
 
-  //const columna = Object.keys(datos);
-  console.log(columna)
-  //console.log(columna);
+
   return (
     <thead>
       <tr>

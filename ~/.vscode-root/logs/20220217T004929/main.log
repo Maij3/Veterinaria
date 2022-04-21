@@ -1,0 +1,12 @@
+[2022-02-17 00:49:32.981] [main] [info] update#setState idle
+[2022-02-17 00:49:33.534] [main] [info] ExtensionHostStarterWorker created
+[2022-02-17 00:49:40.131] [main] [info] Starting extension host with pid 7903 (fork() took 52 ms).
+[2022-02-17 00:49:40.134] [main] [info] ExtensionHostStarterWorker.start() took 78 ms.
+[2022-02-17 00:49:43.160] [main] [warning] Switching to using in-memory credential store instead because Keytar failed to load: Unknown or unsupported transport “disabled” for address “disabled:”
+[2022-02-17 00:50:02.984] [main] [info] update#setState checking for updates
+[2022-02-17 00:50:02.988] [main] [info] update#setState idle
+[2022-02-17 00:50:13.967] [main] [info] Extension host with pid 7903 exited with code: 0, signal: null.
+[2022-02-17 00:50:17.793] [main] [info] Starting extension host with pid 8005 (fork() took 30 ms).
+[2022-02-17 00:50:17.794] [main] [info] ExtensionHostStarterWorker.start() took 34 ms.
+[2022-02-17 00:50:39.723] [main] [info] Waiting for extension host with pid 8005 to exit.
+[2022-02-17 00:50:39.791] [main] [info] Extension host with pid 8005 exited with code: 0, signal: null.

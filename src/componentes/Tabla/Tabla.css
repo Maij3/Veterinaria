@@ -1,20 +1,36 @@
 .btn-primary {
-  margin: 20px;
-  float: right;
+    margin: 20px;
+    float: right;
 }
 
 .flex-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: row-reverse;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
 }
 
 .form-inline {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 th {
-  text-transform:capitalize;
+    text-transform: capitalize;
+}
+
+.btn-group button.btn {
+    margin-right: 10px;
+}
+
+@media only screen and (max-width:767px) {
+    .btn-group {
+        flex-direction: column;
+    }
+    .btn-group button.btn {
+        margin-bottom: 10px;
+    }
+    tr {
+        vertical-align: baseline;
+    }
 }
