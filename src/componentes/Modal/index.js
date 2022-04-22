@@ -9,9 +9,14 @@ function Modal({
     Objeto,
     Titulo,
     children =[],
+    btnEditar ,
+    setBtnEditar,
+    setObjeto,
 }) {
     const cambiarModal = () => {
-        CambiarModal(false)
+	CambiarModal(false)
+	setBtnEditar(false);
+	setObjeto([]);
     }
 
 
@@ -23,7 +28,7 @@ function Modal({
           <div className="modal-body">
 	      {children}
           </div>
-	  <ModalFooter CrearEntidades = {CrearEntidades} Objeto= {Objeto} />
+	  <ModalFooter CrearEntidades = {CrearEntidades} Objeto= {Objeto} btnEditar={btnEditar} />
         </div>
       </div>
     </div>

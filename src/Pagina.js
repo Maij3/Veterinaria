@@ -19,29 +19,19 @@ function Pagina({
     Titulo,
     Entidad
 }) {
-    const [MostrarModal, CambiarModal] = useState(false);
-    const [datos, setdatos] = useState([]);
-    const [columna, setcolumna] = useState([]);
-    const [alerta, setAlerta] = useState(null);
-    const [error, setError] = useState(null);
-    const [objeto, setObjeto] = useState([]);
-    const [opciones , setOpciones] = useState([]);
-    const [entidades , setEntidades] = useState([]);
-    const [idObjeto , setidObjeto] = useState(null);
-    const [method , Setmethod] = useState("POST")
-    //Opciones Iniciales 
+        //Opciones Iniciales 
     const opcionesIniciales = {
         Raza: [{
-                valor: "Perro",
-                etiqueta: "Perro",
+                valor: "Poodle",
+                etiqueta: "Poodle",
             },
             {
-                valor: "Gato",
-                etiqueta: "Gato",
+                valor: "Pekingese",
+                etiqueta: "Pekingese",
             },
             {
-                valor: "Pajaro",
-                etiqueta: "Pajaro",
+                valor: "Shiba Inu",
+                etiqueta: "Shiba Inu",
             },
             {
                 valor: "Otro",
@@ -64,9 +54,24 @@ function Pagina({
                 valor: "Parvovirosis",
                 etiqueta: "Parvovirosis",
             },
-        ]
+	] , 
+	    mascota: [],
+	    veterinaria: [],
+	    dueno: [],
     };
 
+
+    const [MostrarModal, CambiarModal] = useState(false);
+    const [datos, setdatos] = useState([]);
+    const [columna, setcolumna] = useState([]);
+    const [alerta, setAlerta] = useState(null);
+    const [error, setError] = useState(null);
+    const [objeto, setObjeto] = useState([]);
+    const [opciones , setOpciones] = useState(opcionesIniciales);
+    const [entidades , setEntidades] = useState([]);
+    const [idObjeto , setidObjeto] = useState(null);
+    const [method , Setmethod] = useState("POST");
+    const [btnEditar , setBtnEditar] = useState(false);
 
     
     //ManejaInput
@@ -87,17 +92,30 @@ function Pagina({
 
 	await CrearEntidad({Entidad ,objeto , method , idObjeto});
 	CambiarModal(false);
-	setAlerta("success");
-	setError('Agregado Con Exito !');
-	setTimeout(function(){
-	    setError(null);
-	}, 2000)
+	if(method === "POST"){
+	    setAlerta("success");
+	    setError('Agregado Con Exito !');
+	    setTimeout(function(){
+		setError(null);
+	    }, 2000)
+	}else if(method=="PUT"){
+	    setAlerta('primary');
+	    setError('Editado Con Exito !');
+	    setTimeout(function() {
+		setError(null);
+	    }, 2000)
+	}
 	ListarEntidades();
-
+	Setmethod("POST")
+	setBtnEditar(false)
+	setObjeto([])
+	
     }
 
     //Editar Entidades
     const EditarEntidades = async (_evento , index) => {
+
+	setBtnEditar(true);
 	
 	let ObtenerEntidad = await ObtenerUno ({
 	    Entidad,
@@ -144,7 +162,7 @@ function Pagina({
 	Setmethod("PUT");
 	setidObjeto(index);
     }
-
+    console.log(opciones)
 
 
     //EliminarEntidades
@@ -166,7 +184,6 @@ function Pagina({
     }, [Entidad])
 
     
-    console.log(idObjeto)
 
     //return 
     return (
@@ -195,15 +212,19 @@ function Pagina({
 		     ManejarInput={ManejarInput}
 		     CrearEntidades = {CrearEntidades}
 		     Objeto = {objeto}
+		     btnEditar = {btnEditar}
+		     setBtnEditar = {setBtnEditar}
+		     setObjeto = {setObjeto}
+
 		>
 		  {columna.map((nombre, index) => {
 		      return(
 			<ComponenteCampo 
 			    key={index}
 			    ManejarInput={ManejarInput}
-			    objeto={datos[0]}
+			    objeto={objeto}
 			    NombreCampo ={nombre}
-			    opciones = {opcionesIniciales}	
+			    opciones = {opciones}	
 			  />
 		      )
 		  })} 

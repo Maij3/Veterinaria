@@ -51,10 +51,8 @@ export const CrearEntidad = async ({
 	let url = null;
 	if(method === "PUT" && (idObjeto || idObjeto === 0)){    	
 	    url = `${API_URL}/${Entidad}/${idObjeto}`;
-	    console.log("Metodo" , method)
 	}else if(method === "POST"){    
 	    url = `${API_URL}/${Entidad}`;
-	    console.log("Metodo" , method)
 	}
 	if(!url){
 	    throw new Error("No Existe La Url");

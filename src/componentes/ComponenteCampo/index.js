@@ -8,7 +8,6 @@ function ComponenteCampo({
     objeto = {},
     NombreCampo = "",
     opciones = {},
-    Value
 }) {
     
     
@@ -28,6 +27,7 @@ function ComponenteCampo({
 			onInput = { ManejarInput }
 			NombreCampo={NombreCampo}
 			placeholder = {NombreCampo}
+			value={objeto[NombreCampo] || ''}
 			/>
             );
         case "dueno":
