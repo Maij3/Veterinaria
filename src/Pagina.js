@@ -111,6 +111,50 @@ function Pagina({
 	setObjeto([])
 	
     }
+    //Cargar Opciones 
+    const CargarOpciones  = async () => {
+	const MascotasPromise = ListarEntidad( {
+	    Entidad: "mascotas"
+	} )
+
+	const VeterinariaPromise = ListarEntidad( {
+	    Entidad: "veterinaria"
+	} )
+
+	const DuenosPromise = ListarEntidad( {
+	    Entidad: "duenos"
+	} )
+
+	let [mascota , veterinaria , dueno] = await Promise.all([
+	    MascotasPromise,
+	    VeterinariaPromise,
+	    DuenosPromise
+	])
+
+	mascota = mascota.map((_mascota , index) => ({
+	    valor: index.toString(),
+	    etiqueta : `${_mascota.Nombre} (${_mascota.Raza})`
+	}))
+
+	veterinaria = veterinaria.map((_veterinaria , index) => ({
+	    valor: index.toString(),
+	    etiqueta: `${_veterinaria.Nombre} (${_veterinaria.Apellido})`,
+	}))
+
+	dueno = dueno.map((_dueno , index ) => ({
+	    valor: index.toString(),
+	    etiqueta: `${_dueno.Nombre} (${_dueno.Dni})`
+	}))
+	
+	const NuevasOpciones = { ...opciones , mascota ,veterinaria , dueno }
+
+	setOpciones(NuevasOpciones);
+
+	console.log(objeto);
+
+    }
+
+
 
     //Editar Entidades
     const EditarEntidades = async (_evento , index) => {
@@ -183,7 +227,9 @@ function Pagina({
         ListarEntidades();
     }, [Entidad])
 
-    
+    useEffect( () => {
+	CargarOpciones();
+    }, [] ) 
 
     //return 
     return (
