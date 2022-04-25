@@ -4,6 +4,7 @@ export const ListarEntidad = async ({Entidad}) => {
     try {
         const res = await fetch(`${API_URL}/${Entidad}`);
         const datos = await res.json();
+	console.log(datos)
         return datos
     } catch (error) {
         console.error(error)

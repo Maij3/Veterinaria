@@ -7,6 +7,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Encabezado from "./encabezado.js";
 import Fila from "./fila.js";
+import Busqueda from "./busqueda";
 
 function Tabla({
   CambiarModal = () => {},
@@ -14,18 +15,32 @@ function Tabla({
   datos=[],
   EliminarEntidades = ()=>{},
   EditarEntidades =()=>{},
+  setdatos =() =>{},
+  ListarEntidades = () =>{},
+  busqueda = null , 
+  setBusqueda = ()=> {}, 
+  tablaVeterinaria, 
+  setTablaVeterinaria = () =>{},
 }) {
 
   const cambiarModal = (Estado) => {
     CambiarModal(Estado);
   }
+
+  console.log(datos) 
+
   return (
     <div className="container">
       <div className="flex-container">
-        <form className="form-inline my-2 my-lg-0">
-          <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
-          <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+	  <Busqueda 
+	    datos = {datos} 
+	    setdatos = {setdatos} 
+	    ListarEntidades = {ListarEntidades}  
+	    busqueda={busqueda} 
+	    setBusqueda = {setBusqueda}
+            tablaVeterinaria = {tablaVeterinaria}
+	    setTablaVeterinaria = {setTablaVeterinaria}
+       />
         <button
 	    type="button"
 	    className ="btn btn-primary btn-style"

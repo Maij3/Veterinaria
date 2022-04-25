@@ -27,7 +27,7 @@ function Pagina({
             },
             {
                 valor: "Pekingese",
-                etiqueta: "Pekingese",
+ etiqueta: "Pekingese",
             },
             {
                 valor: "Shiba Inu",
@@ -72,8 +72,8 @@ function Pagina({
     const [idObjeto , setidObjeto] = useState(null);
     const [method , Setmethod] = useState("POST");
     const [btnEditar , setBtnEditar] = useState(false);
-
-    
+    const [busqueda , setBusqueda] = useState("");
+    const [tablaVeterinaria , setTablaVeterinaria] = useState([]); 
     //ManejaInput
     const ManejarInput = (evento) => {
 	 const { target: {value, name} } = evento;
@@ -83,8 +83,12 @@ function Pagina({
     const ListarEntidades = async () => {
         const resp = await ListarEntidad({
             Entidad
-        })
-        setdatos([resp])
+	})
+
+	console.log(resp)
+
+	setdatos([resp])
+	setTablaVeterinaria([resp])
         setcolumna(Object.keys(resp[0]));
     }
     //CrearEntidad
@@ -150,7 +154,6 @@ function Pagina({
 
 	setOpciones(NuevasOpciones);
 
-	console.log(objeto);
 
     }
 
@@ -206,7 +209,6 @@ function Pagina({
 	Setmethod("PUT");
 	setidObjeto(index);
     }
-    console.log(opciones)
 
 
     //EliminarEntidades
@@ -249,8 +251,14 @@ function Pagina({
         CambiarModal={CambiarModal}
         columna={columna}
 	datos={datos}
+	setdatos = {setdatos}
+	tablaVeterinaria = {tablaVeterinaria}
+	setTablaVeterinaria = {setTablaVeterinaria}
 	EliminarEntidades ={EliminarEntidades}
 	EditarEntidades = {EditarEntidades}
+	ListarEntidades = {ListarEntidades}
+	busqueda = {busqueda}
+	setBusqueda = {setBusqueda}
       />
 	  {MostrarModal && (
 	      <Modal CambiarModal={CambiarModal} 
