@@ -27,7 +27,6 @@ function Tabla({
     CambiarModal(Estado);
   }
 
-  console.log(datos) 
 
   return (
     <div className="container">

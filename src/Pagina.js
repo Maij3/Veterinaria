@@ -27,7 +27,7 @@ function Pagina({
             },
             {
                 valor: "Pekingese",
- etiqueta: "Pekingese",
+	        etiqueta: "Pekingese",
             },
             {
                 valor: "Shiba Inu",
@@ -85,10 +85,9 @@ function Pagina({
             Entidad
 	})
 
-	console.log(resp)
 
 	setdatos([resp])
-	setTablaVeterinaria([resp])
+	setTablaVeterinaria(resp)
         setcolumna(Object.keys(resp[0]));
     }
     //CrearEntidad

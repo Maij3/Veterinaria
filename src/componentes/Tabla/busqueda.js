@@ -11,8 +11,7 @@ function Busqueda ({
 
 }) {
 
-
-    
+    console.log(tablaVeterinaria)
 
     const handleChange = (e)=> {
 	setBusqueda(e.target.value);
@@ -22,23 +21,15 @@ function Busqueda ({
     const Filtrar = (terminoBusqueda) => {
 
 
-	var respuesta  = tablaVeterinaria[0].filter(item =>{
+	var respuesta  = tablaVeterinaria.filter(item =>{
 	    if(item.Nombre.toString().includes(terminoBusqueda)){
 		return item;
 	    }
 	})
 
+
+
         setdatos([respuesta])
-	//setdatos(respuesta)
-	//	console.log(datos)
-	//  item.filter(item2 => {
-	//	if(item2.Nombre.toString().includes(terminoBusqueda)){
-	//	    // console.log(item2)
-	//	    return "Jaime"
-	//	}
-	//  })
-	//}))
-	//setdatos(resultadoBusqueda)	
     }
     
     
